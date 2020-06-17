@@ -5,9 +5,9 @@
   "main": "build/index.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive ./build/test",
-    "start": "tsc && nodemon ./build/src/index.js",
-    "serve": "NODE_ENV=production node ./build/src/index.js",
-    "build": "rm -fR ./build && tsc && node ./build/src/compile.js"
+    "start": "tsc && nodemon ./build/index.js",
+    "serve": "NODE_ENV=production node ./build/index.js",
+    "build": "rm -fR ./build && tsc && node ./build/compile.js"
   },
   "repository": {
     "type": "git",
