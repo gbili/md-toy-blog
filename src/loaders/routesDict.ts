@@ -15,6 +15,7 @@ const routesInjectionDict: InjectionDict = {
       path: '/'
     },
     locateDeps: {
+      validPostSlugList: 'validPostSlugList',
       controller: {
         instance: 'blogPostController',
       },
@@ -39,7 +40,7 @@ const routesInjectionDict: InjectionDict = {
       path: '/css/',
     },
     locateDeps: {
-      relativeStaticFileListGetter: 'relativeStaticFileListGetter',
+      staticFilePathsGetter: 'relativeStaticFileListGetter',
       controller: {
         instance: 'staticFileController',
       },

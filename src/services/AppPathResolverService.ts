@@ -37,8 +37,11 @@ export default class AppPathResolverService implements AppPathsInterface {
 
   private getViewTemplateBaseName(controllerName: string) {
     //const fullName = this.constructor.name;
-    return controllerName
-      .substring(0, controllerName.length - 'Controller'.length)
-      .toLowerCase();
+    const withoutController = controllerName
+      .substring(0, controllerName.length - 'Controller'.length);
+    const UCToLowerDashed = withoutController
+      .replace(/[A-Z]/g, m => `-${m.toLowerCase()}`)
+      .substring(1);
+    return UCToLowerDashed;
   }
 }

@@ -4,7 +4,8 @@ function isString(slug: string | undefined): slug is string {
   return typeof slug !== 'undefined';
 }
 
-export type PostListGetter = () => string[];
+export type PostSlugList = string[];
+export type PostListGetter = () => PostSlugList;
 
 const loadDictElement: LoadDictElement<PostListGetter> = {
   factory: ({ compiledUserContentDir }: { compiledUserContentDir: string }) => {

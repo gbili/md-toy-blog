@@ -8,6 +8,7 @@ const loadDictElement: LoadDictElement<BlogHomeController> = {
     postPreviewShortener: 'postPreviewShortener',
     markdownToHtmlService: 'markdownToHtmlService',
     templateHydratorService: 'templateHydratorService',
+    additionalViewData: 'additionalViewData',
   }
 };
 

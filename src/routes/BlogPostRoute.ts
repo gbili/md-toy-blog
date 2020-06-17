@@ -9,8 +9,8 @@ export default class BlogPostRoute
     this.controller = config.controller;
   }
 
-  getControllerActionParams({ request }: { request: HttpRequest }) {
-    return this.getRequestedPostSlug(request, this.path);
+  getControllerActionParams({ request }: { request: HttpRequest }): BlogPostControllerActionParams {
+    return { postSlug: this.getRequestedPostSlug(request, this.path) };
   }
 
   protected isValid(req: HttpRequest) {

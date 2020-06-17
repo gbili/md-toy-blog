@@ -5,10 +5,9 @@ import { LoggerInterface } from 'saylo/build/src/Logger';
 export type Server = http.Server;
 
 const loadDictElement: LoadDictElement<Server> = {
-  factory: (d) => {
-    console.log(d)
+  factory: ({ router }) => {
     const server = http.createServer(async function (req, res) {
-      const response = await d.router.resolve(req);
+      const response = await router.resolve(req);
       if (response) {
         res.writeHead(response.code, response.headers);
         res.end(response.body);
@@ -18,7 +17,7 @@ const loadDictElement: LoadDictElement<Server> = {
     return server;
   },
   locateDeps: {
-    router: 'router',
+    router: 'routerService',
   },
   async after({ me, serviceLocator }) {
     const logger = await serviceLocator.get<LoggerInterface>('logger');

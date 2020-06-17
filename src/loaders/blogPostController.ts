@@ -7,6 +7,7 @@ const loadDictElement: LoadDictElement<GetInstanceType<typeof BlogPostController
     appPaths: 'appPathResolverService',
     markdownToHtmlService: 'markdownToHtmlService',
     templateHydratorService: 'templateHydratorService',
+    additionalViewData: 'additionalViewData',
   }
 };
 
