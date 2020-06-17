@@ -1,5 +1,7 @@
 # build
 build/
+content/*
+static/*
 # nyc
 .nyc_output
 converage
