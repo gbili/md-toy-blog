@@ -1,0 +1,56 @@
+{
+  "name": "cronide-server-project",
+  "version": "0.0.0-development",
+  "description": "Base Project: Node Mocha Chai Travis Semantic-Release Nyc Codecov Ghooks, Apollo, Express & MySQL",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha --recursive ./build/test",
+    "start": "tsc && nodemon ./build/src/index.js",
+    "serve": "NODE_ENV=production node ./build/src/index.js",
+    "build": "rm -fR ./build && tsc && node ./build/src/compile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.com/usrpath/cronide-server-project.git"
+  },
+  "keywords": [
+    "nodejs",
+    "templating",
+    "moustache",
+    "simple",
+    "minimal"
+  ],
+  "author": "Guillermo Pages <mail@guillermo.at> (https://guillermo.at)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://bitbucket.com/usrpath/cronide-server-project/issues"
+  },
+  "homepage": "https://bitbucket.com/usrpath/cronide-server-project#readme",
+  "devDependencies": {
+    "@types/mime-types": "2.1.0",
+    "@types/recursive-readdir": "2.2.0",
+    "@types/showdown": "1.9.3"
+  },
+  "dependencies": {
+    "@types/chai": "4.2.9",
+    "@types/chai-as-promised": "7.1.2",
+    "@types/express-serve-static-core": "4.17.2",
+    "@types/mocha": "7.0.1",
+    "chai": "4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "di-why": "0.15.5",
+    "dotenv": "^8.0.0",
+    "front-matter": "4.0.2",
+    "mime-types": "2.1.27",
+    "mocha": "7.1.2",
+    "mostachito": "1.0.2",
+    "nodemon": "latest",
+    "recursive-readdir": "2.2.2",
+    "saylo": "0.5.0",
+    "showdown": "1.9.1",
+    "showdown-highlight": "2.1.4"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
