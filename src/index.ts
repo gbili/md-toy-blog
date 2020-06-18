@@ -3,12 +3,17 @@ import { LoggerInterface } from 'saylo/build/src/Logger';
 import { PossiblyEnhancedAppConfig } from './loaders/appConfig';
 import { Server } from './loaders/server';
 
+let appConfig;
+let logger;
+let server;
+
 try {
   (async function () {
     try {
-      const logger = await di.get<LoggerInterface>('logger');
-      const server = await di.get<Server>('server');
-      const { port } = await di.get<PossiblyEnhancedAppConfig>('appConfig');
+      logger = await di.get<LoggerInterface>('logger');
+      server = await di.get<Server>('server');
+      appConfig = await di.get<PossiblyEnhancedAppConfig>('appConfig');
+      const { port } = appConfig;
       server.listen(port);
       logger.log(' BLOG = BLOG = BLOG = BLOG = BLOG = BLOG');
       logger.log(`Listening on : http://localhost:${port}`);
@@ -21,3 +26,6 @@ try {
 } catch (err) {
   throw err;
 }
+
+export { appConfig, logger, server, di };
+export default server;
