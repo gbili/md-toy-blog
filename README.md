@@ -1,4 +1,4 @@
-# Markdown Toy Blog 2
+# Markdown Toy Blog
 
 - Serves markdown files as an html blog.
 - Uses markdown filenames as url-post-slugs.
@@ -27,7 +27,7 @@
 There are two ways of using this package either:
 
 1. as a **node_module**: `npm i md-toy-blog`
-2. by cloning the **repo** `git clone https://github.com/gbili/node-blog.git`
+2. by cloning the **repo** `git clone https://github.com/gbili/md-toy-blog-.git`
 
 ## 1. Installation as a `node_module`
 
@@ -64,7 +64,7 @@ node ./node_modules/md-toy-blog/build/index.js
 ## 2. Installation as a `repo`
 
 ```bash
-git clone https://github.com/gbili/node-blog.git
+git clone https://github.com/gbili/md-toy-blog.git
 npm i
 ```
 
@@ -83,7 +83,7 @@ Create a separate github repository with a `package.json` containing:
 
 ```json
 {
-  "name": "md-toy-blog-nest",
+  "name": "md-toy-blog-skeleton",
   "version": "0.0.0-development",
   "description": "This is the nest for your md-toy-blog. Git clone this and run `npm buid && npm serve`",
   "scripts": {
@@ -92,7 +92,7 @@ Create a separate github repository with a `package.json` containing:
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gbili/node-blog.git"
+    "url": "https://github.com/gbili/md-toy-blog-skeleton.git"
   },
   "keywords": [
     "nodejs",
@@ -104,9 +104,9 @@ Create a separate github repository with a `package.json` containing:
   "author": "Guillermo Pages <mail@guillermo.at> (https://guillermo.at)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gbili/node-blog/issues"
+    "url": "https://github.com/gbili/md-toy-blog-skeleton/issues"
   },
-  "homepage": "https://github.com/gbili/node-blog#readme",
+  "homepage": "https://github.com/gbili/md-toy-blog-skeleton#readme",
   "dependencies": {
     "md-toy-blog": "latest",
   },
