@@ -11,16 +11,16 @@ export default class StaticFileController
   }
 
   async action({ filepath }: StaticFileControllerActionParams ) {
-    filepath = `${this.config.staticFilesDir}/${filepath}`;
+    const absFilepath = `${this.config.staticFilesDir}/${filepath}`;
     try {
       const rawContents: string = await (new Promise(function(resolve, reject) {
-        fs.readFile(filepath, 'utf-8', function(err, rawContents) {
+        fs.readFile(absFilepath, 'utf-8', function(err, rawContents) {
           if (err) return reject(err);
           return resolve(rawContents);
         });
       }));
 
-      const mimeType = mime.lookup(filepath);
+      const mimeType = mime.lookup(absFilepath);
       if (!mimeType) {
         throw new Error('Mime Type not supported')
       }
