@@ -25,7 +25,6 @@ export default class DirFilesToJsonService {
       });
       return files;
     } catch (err) {
-      console.log(err);
       throw err;
     }
   }
@@ -45,7 +44,6 @@ export default class DirFilesToJsonService {
       });
       return writtenFilePath;
     } catch (err) {
-      console.log(err);
       throw err;
     }
   }

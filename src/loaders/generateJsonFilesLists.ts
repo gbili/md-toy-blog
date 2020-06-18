@@ -13,7 +13,6 @@ const loadDictElement: LoadDictElement<GenerateJsonFilesList> = {
           !recursive
         );
       } catch (err) { 
-        console.log(err);
         throw err;
       }
     };
@@ -25,7 +24,6 @@ const loadDictElement: LoadDictElement<GenerateJsonFilesList> = {
           recursive
         );
       } catch (err) {
-        console.log(err);
         throw err;
       }
     };
@@ -33,7 +31,6 @@ const loadDictElement: LoadDictElement<GenerateJsonFilesList> = {
       try {
         await Promise.all([blogPostsListGen(), staticFilesListGen()]);
       } catch (err) {
-        console.log(err);
         throw err;
       }
     };

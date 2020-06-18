@@ -2,7 +2,6 @@ export default class NotFoundController implements ControllerInterface {
   constructor(protected config?: NotFoundControllerCtorConfig) {}
 
   handleError(err: Error) {
-    console.log(err);
     return {
       code: 501,
       headers: {'content-type': 'text/plain; charset=utf-8'},
