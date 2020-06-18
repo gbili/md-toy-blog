@@ -10,12 +10,17 @@
   </head>
 
   <body>
-    <h1>{{ siteTitle }}</h1>
-    <h2>{{ missingRef }}, {{ hey.missingRef }}, {{ hey.hoy.missingRef }}</h2>
-    <ul class="posts-list">
-      {{posts as post
-      <li><a href="/{{ post.attributes.slug }}">{{ post.attributes.title }}</a><div class="post-preview">{{ post.body }}</div></li>
-      posts}}
-    </ul>
+    <div id="main-container">
+      <header>
+        <h1>{{ siteTitle }}</h1>
+      </header> 
+      <div id="content">
+        <ul class="posts-list">
+          {{posts as post
+          <li><a href="/{{ post.attributes.slug }}">{{ post.attributes.title }}</a><div class="post-preview">{{ post.body }}</div></li>
+          posts}}
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
