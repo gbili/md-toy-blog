@@ -1,6 +1,6 @@
 {
   "name": "md-toy-blog",
-  "version": "0.0.0-development",
+  "version": "2.0.0",
   "description": "Very simple Markdown blog: serves your md as html without fancy databases. You will only spend time writing the actual data.",
   "main": "build/index.js",
   "scripts": {
@@ -13,7 +13,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gbili/md-toy-blog.git"
-
   },
   "keywords": [
     "nodejs",
