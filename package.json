@@ -1,17 +1,19 @@
 {
-  "name": "cronide-server-project",
+  "name": "md-toy-blog-ts",
   "version": "0.0.0-development",
-  "description": "Base Project: Node Mocha Chai Travis Semantic-Release Nyc Codecov Ghooks, Apollo, Express & MySQL",
+  "description": "Very simple Markdown blog: serves your md as html without fancy databases. You will only spend time writing the actual data.",
   "main": "build/index.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive ./build/test",
-    "start": "tsc && nodemon ./build/index.js",
-    "serve": "NODE_ENV=production node ./build/index.js",
+    "dev": "tsc -w",
+    "start": "nodemon ./build/index.js",
+    "serve": "tsc && NODE_ENV=production node ./build/index.js",
     "build": "rm -fR ./build && tsc && node ./build/compile.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.com/usrpath/cronide-server-project.git"
+    "url": "https://github.com/gbili/node-blog.git"
+
   },
   "keywords": [
     "nodejs",
@@ -23,9 +25,9 @@
   "author": "Guillermo Pages <mail@guillermo.at> (https://guillermo.at)",
   "license": "MIT",
   "bugs": {
-    "url": "https://bitbucket.com/usrpath/cronide-server-project/issues"
+    "url": "https://github.com/gbili/node-blog/issues"
   },
-  "homepage": "https://bitbucket.com/usrpath/cronide-server-project#readme",
+  "homepage": "https://github.com/gbili/node-blog#readme",
   "devDependencies": {
     "@types/mime-types": "2.1.0",
     "@types/recursive-readdir": "2.2.0",
