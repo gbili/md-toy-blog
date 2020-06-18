@@ -26,7 +26,7 @@
 
 There are two ways of using this package either:
 
-1. as a **node_module**: `npm i md-toy-blog-2`
+1. as a **node_module**: `npm i md-toy-blog`
 2. by cloning the **repo** `git clone https://github.com/gbili/node-blog.git`
 
 ## 1. Installation as a `node_module`
@@ -49,16 +49,16 @@ Now that we have a structure like this `./<my_blog>/content`, go to the `<my_blo
 
 ```bash
 cd <my_blog>
-npm i md-toy-blog-2
+npm i md-toy-blog
 ```
 
 Once everything is installed, it should work out of the box with.
 
 ```bash
 # generates the json files list list
-node ./node_modules/md-toy-blog-2/build/compile.js
+node ./node_modules/md-toy-blog/build/compile.js
 # run the app
-node ./node_modules/md-toy-blog-2/build/index.js
+node ./node_modules/md-toy-blog/build/index.js
 ```
 
 ## 2. Installation as a `repo`
@@ -87,8 +87,8 @@ Create a separate github repository with a `package.json` containing:
   "version": "0.0.0-development",
   "description": "This is the nest for your md-toy-blog. Git clone this and run `npm buid && npm serve`",
   "scripts": {
-    "serve": "node ./node_modules/md-toy-blog-2/build/index.js",
-    "build": "node ./node_modules/md-toy-blog-2/build/compile.js"
+    "serve": "node ./node_modules/md-toy-blog/build/index.js",
+    "build": "node ./node_modules/md-toy-blog/build/compile.js"
   },
   "repository": {
     "type": "git",
@@ -108,7 +108,7 @@ Create a separate github repository with a `package.json` containing:
   },
   "homepage": "https://github.com/gbili/node-blog#readme",
   "dependencies": {
-    "md-toy-blog-2": "latest",
+    "md-toy-blog": "latest",
   },
 }
 ```
