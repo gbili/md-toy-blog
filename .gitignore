@@ -1,7 +1,5 @@
 # build
 build/
-content/
-static/
 compiled_user_content/*
 # nyc
 .nyc_output
