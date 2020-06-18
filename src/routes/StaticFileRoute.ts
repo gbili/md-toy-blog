@@ -13,15 +13,15 @@ export default class StaticFileRoute
   }
 
   getControllerActionParams({ request }: { request: HttpRequest }) {
-    const filepath = this.getRequestedFilepath(request).substring('/'.length);
-    return { filepath };
+    return { filepath: this.getRequestedFilepath(request) };
   }
 
   protected isValid(request: HttpRequest) {
     return this.staticFilePaths.indexOf(this.getRequestedFilepath(request)) >= 0;
   }
 
-  private getRequestedFilepath(request: HttpRequest) {
-    return request.url;
+  protected getRequestedFilepath({ url }: { url: string; }) {
+    const stripOutQueryPart = /^(\/[^?]*)\?/g.exec(url);
+    return stripOutQueryPart ? stripOutQueryPart[1] : url;
   }
 }
