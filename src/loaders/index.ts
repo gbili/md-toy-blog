@@ -3,10 +3,12 @@ import 'dotenv/config';
 import DiContainer from 'di-why';
 
 import MTB_COMPILED_USER_CONTENT_DIR from './MTB_COMPILED_USER_CONTENT_DIR';
+import MTB_ENV from './MTB_ENV';
 import MTB_MD_BLOG_POSTS_DIR from './MTB_MD_BLOG_POSTS_DIR';
 import MTB_MISSING_REF_VALUE_REPLACEMENT from './MTB_MISSING_REF_VALUE_REPLACEMENT';
 import MTB_PACKAGE_NAME from './MTB_PACKAGE_NAME';
 import MTB_POST_PREVIEW_LENGTH from './MTB_POST_PREVIEW_LENGTH';
+import MTB_ROOT_DIR from './MTB_ROOT_DIR';
 import MTB_STATIC_FILES_DIR from './MTB_STATIC_FILES_DIR';
 import MTB_USER_CUSTOM_CONFIG_PATH from './MTB_USER_CUSTOM_CONFIG_PATH';
 import MTB_USER_PROJECT_ROOT_DIR from './MTB_USER_PROJECT_ROOT_DIR';
@@ -34,15 +36,18 @@ import staticFileController from './staticFileController';
 import staticFilesToJsonService from './staticFilesToJsonService';
 import templateHydratorService from './templateHydratorService';
 import userCustomConfig from './userCustomConfig'
+import userOrDefaultDir from './userOrDefaultDir';
 import validPostSlugList from './validPostSlugList';
 import validPostSlugListGetter from './validPostSlugListGetter';
 
 const injectionDict = {
   MTB_COMPILED_USER_CONTENT_DIR,
+  MTB_ENV,
   MTB_MD_BLOG_POSTS_DIR,
   MTB_MISSING_REF_VALUE_REPLACEMENT,
   MTB_PACKAGE_NAME,
   MTB_POST_PREVIEW_LENGTH,
+  MTB_ROOT_DIR,
   MTB_STATIC_FILES_DIR,
   MTB_USER_CUSTOM_CONFIG_PATH,
   MTB_USER_PROJECT_ROOT_DIR,
@@ -69,6 +74,7 @@ const injectionDict = {
   staticFilesToJsonService,
   templateHydratorService,
   userCustomConfig,
+  userOrDefaultDir,
   validPostSlugList,
   validPostSlugListGetter,
 };

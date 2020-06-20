@@ -1,13 +1,15 @@
 import 'dotenv/config';
 import { LoadDictElement } from 'di-why/build/src/DiContainer';
 
-const loadDictElement: LoadDictElement<string> = {
-  factory: function ({ userProjectRootDir }: { userProjectRootDir: string }) {
-    return process.env.MTB_STATIC_FILES_DIR
-      || `${userProjectRootDir}/views`;
+type FactoryProps = {
+  userOrDefaultDir: UserOrDefaultDirFunction;
+};
+const loadDictElement: LoadDictElement<Promise<string>> = {
+  factory: async function ({ userOrDefaultDir }: FactoryProps) {
+    return await userOrDefaultDir('MTB_VIEW_TEMPLATES_DIR', 'views');
   },
   locateDeps: {
-    userProjectRootDir: 'MTB_USER_PROJECT_ROOT_DIR',
+    userOrDefaultDir: 'userOrDefaultDir',
   },
 };
 export default loadDictElement;
