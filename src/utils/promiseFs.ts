@@ -14,7 +14,7 @@ export const existsDir = async function (absPath: string) {
     fs.stat(absPath, function(err, stats) {
       const exists = true;
       if (err) {
-        if (err.errno === 34) {
+        if (err.errno === -2) {
           return resolve(!exists);
         }
         return reject(err);
