@@ -27,7 +27,7 @@ export const getCouldBeNodeModuleRootDir = function (somePathWithinModule: strin
 }
 
 export const isWithinNodeModuleOrClonedRepo = async function (somePath: string, existsDir: ExistsDirFunc) {
-  const isWithinCouldBeNodeModule = !pathWithinCouldBeNodeModule(somePath);
+  const isWithinCouldBeNodeModule = pathWithinCouldBeNodeModule(somePath);
   const absSomePath = path.resolve(somePath);
   const providedPathExists = await existsDir(absSomePath);
   if (!providedPathExists) {
