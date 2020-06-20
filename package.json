@@ -6,9 +6,10 @@
   "scripts": {
     "test": "tsc && mocha --recursive ./build/test",
     "dev": "tsc -w",
-    "start": "nodemon ./build/index.js",
-    "serve": "tsc && NODE_ENV=production node ./build/index.js",
-    "build": "rm -fR ./build && tsc && node ./build/compile.js"
+    "start": "nodemon ./build/src/index.js",
+    "serve": "tsc && NODE_ENV=production node ./build/src/index.js",
+    "build": "tsc && node ./build/src/compile.js",
+    "build:clean": "rm -fR ./build"
   },
   "repository": {
     "type": "git",
