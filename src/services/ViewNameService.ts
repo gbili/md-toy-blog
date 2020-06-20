@@ -9,10 +9,7 @@ export default class ViewNameService {
   }
 
   getViewPath(viewBaseName: string, action: string) {
-    const viewsPath = (typeof this.config.viewsPath !== 'undefined')
-      ? this.config.viewsPath
-      : `${__dirname}/../view`;
-    const filepath = `${viewsPath}/${viewBaseName}-${action}.html`;
+    const filepath = `${this.config.viewsPath}/${viewBaseName}-${action}.html`;
     return filepath;
   }
 }
