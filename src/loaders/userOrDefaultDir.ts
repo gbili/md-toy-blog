@@ -30,7 +30,7 @@ const loadDictElement: LoadDictElement<UserOrDefaultDirFunction> = {
   locateDeps: {
     MTB_ENV: 'MTB_ENV',
     MTB_USER_PROJECT_ROOT_DIR: 'MTB_USER_PROJECT_ROOT_DIR',
-    MTB_ROOT_DIR: 'MTB_USER_PROJECT_ROOT_DIR',
+    MTB_ROOT_DIR: 'MTB_ROOT_DIR',
     logger: 'logger',
   },
 };
