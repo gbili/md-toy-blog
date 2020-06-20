@@ -1,8 +1,8 @@
 {
   "name": "md-toy-blog",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Very simple Markdown blog: serves your md as html without fancy databases. You will only spend time writing the actual data.",
-  "main": "build/index.js",
+  "main": "build/src/index.js",
   "scripts": {
     "test": "tsc && mocha --recursive ./build/test",
     "dev": "tsc -w",
