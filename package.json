@@ -1,6 +1,6 @@
 {
   "name": "md-toy-blog",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "Very simple Markdown blog: serves your md as html without fancy databases. You will only spend time writing the actual data.",
   "main": "build/src/index.js",
   "scripts": {
