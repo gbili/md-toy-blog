@@ -4,7 +4,7 @@
   "description": "Very simple Markdown blog: serves your md as html without fancy databases. You will only spend time writing the actual data.",
   "main": "build/index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --recursive ./build/test",
+    "test": "tsc && mocha --recursive ./build/test",
     "dev": "tsc -w",
     "start": "nodemon ./build/index.js",
     "serve": "tsc && NODE_ENV=production node ./build/index.js",

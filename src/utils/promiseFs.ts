@@ -9,7 +9,7 @@ export const createDir = async function (absPath: string) {
   }));
 };
 
-export const existsDir = async function (absPath: string) {
+export const existsDir = async function (absPath: string): Promise<boolean> {
   return await (new Promise(function(resolve, reject) {
     fs.stat(absPath, function(err, stats) {
       const exists = true;
