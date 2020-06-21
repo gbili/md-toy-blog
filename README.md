@@ -18,18 +18,18 @@
 
 - You can add your own HTML templates, js and css styling.
 
-**IMPORTANT**: your files have to live in 3 folders (you an change their names using _environment variables_, see the section environment variables):
+**IMPORTANT**: your files have to live in 3 folders (you can change their names using _environment variables_, see the section environment variables):
 
 1. `./content`: markdown blog posts live here
 2. `./views`: html view templates containing mostachito references like `{{ myVariable }}`
-3. `./static`: can have subdirectories `./static/css`, `./static/js` etc.
+3. `./static`: can have subdirectories `./static/css`, `./static/js`, `./static/img` etc.
 
 ## Installation
 
 There are two ways of using this package either:
 
 1. as a **node_module**: `npm i md-toy-blog`
-2. by cloning the **repo** `git clone https://github.com/gbili/md-toy-blog-.git`
+2. by cloning the **repo** `git clone https://github.com/gbili/md-toy-blog.git`
 
 ## 1. Installation as a `node_module`
 
@@ -63,10 +63,13 @@ node ./node_modules/md-toy-blog/build/src/compile.js
 node ./node_modules/md-toy-blog/build/src/index.js
 ```
 
+**IMPORTANT**: look up the section _Skeleton blog project_ to get a skeleton directory structure and a `package.json` with the two commands above as scripts, so you can quickly run `npm run build && npm run serve` instead.
+
 ## 2. Installation as a `repo`
 
 ```bash
 git clone https://github.com/gbili/md-toy-blog.git
+cd md-toy-blog
 npm i
 ```
 
@@ -120,7 +123,16 @@ There are a few environment variables that allow you to customize _Md toy blog_'
 
 ## Skeleton Blog Project
 
-If you want to use `md-toy-blog` npm module. You might as well use a `package.json` in your project's root dir with a few scripts that will help you update your blog whenever you write a new markdown blog post. Here is what the `package.json` could look like :
+When you want to use `md-toy-blog` as an **npm module** it is more practical to have a `package.json` with a few scripts to help you with updating your blog whenever you write new posts.
+
+> If you want to fast forward clone the [skeleton blog project](https://github.com/gbili/md-toy-blog-skeleton) and follow the `README` there, basically it tells you to:
+
+```bash
+git clone https://github.com/md-toy-blog-skeleton.git
+cd md-toy-blog-skeleton
+```
+
+The command above will get you a directory structure with a `package.json` that looks like this :
 
 ```json
 {
@@ -129,7 +141,8 @@ If you want to use `md-toy-blog` npm module. You might as well use a `package.js
   "description": "This is the skeleton for your md-toy-blog. Git clone this and run `npm buid && npm serve`",
   "scripts": {
     "serve": "node ./node_modules/md-toy-blog/build/src/index.js",
-    "build": "node ./node_modules/md-toy-blog/build/src/compile.js"
+    "build": "node ./node_modules/md-toy-blog/build/src/compile.js",
+    "restart": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
@@ -140,6 +153,8 @@ If you want to use `md-toy-blog` npm module. You might as well use a `package.js
     "templating",
     "moustache",
     "simple",
+    "blog",
+    "markdown",
     "minimal"
   ],
   "author": "Guillermo Pages <mail@guillermo.at> (https://guillermo.at)",
@@ -154,13 +169,13 @@ If you want to use `md-toy-blog` npm module. You might as well use a `package.js
 }
 ```
 
-**IMPORTANT**: you can also clone a repo with the skeleton structure to then start adding markdown blog posts in its `content` dir. `cd` to your workspace and clone it with:
+Once you have such a `package.json` file you can proceed with the installation.
 
 ```bash
-git clone https://github.com/md-toy-blog-skeleton.git
 npm i
-npm run build
-npm run serve
+npm run restart
 ```
 
 After these commands your blog should be available in your browser at [http://localhost:3100](http://localhost:3100) of course you will need to place some of your own markdown posts in the `content`'s directory, and remove the sample ones.
+
+**IMPORTANT**: **DO NOT FORGET TO `npm run restart`** after you create a new blog post.
