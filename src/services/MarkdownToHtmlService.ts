@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 export default class MarkdownToHtmlService { //implements MarkdownToHtmlConstructorInterface {
+  private defaultPostPrivacy: "private" | "public" = "private";
   private fm: FmFunction;
   private converter: SdConverter;
 
@@ -9,21 +10,23 @@ export default class MarkdownToHtmlService { //implements MarkdownToHtmlConstruc
     this.converter = converter;
   }
 
-  loadConvert(postSlug: string, markdownFilePath: string, preHtmlCallback: PreHtmlCallback) {
+  extractFmAttributesAndHtmlBodyFromMd(postSlug: string, markdownFilePath: string, preHtmlCallback: PreHtmlCallback) {
     const fm = this.fm;
     const converter = this.converter;
+    const privacy = this.defaultPostPrivacy;
     return new Promise<FmDataInterface>(function(resolve, reject) {
       fs.readFile(markdownFilePath, 'utf-8', function(err, fileContents) {
 
         if (err) return reject(err); 
         let data = fm(fileContents);
         const attributes = (typeof data.attributes === 'undefined')
-          ? {}
+          ? { privacy }
           : { ...data.attributes };
 
-       const attributesWithSlug = {
+        const attributesWithSlug = {
           ...attributes,
           slug: postSlug,
+          privacy: attributes?.privacy || privacy
         }
 
         const fixNoLanguageBugFallbackToJS = function (body: string) {
