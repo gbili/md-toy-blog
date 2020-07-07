@@ -39,6 +39,7 @@ import userCustomConfig from './userCustomConfig'
 import userOrDefaultDir from './userOrDefaultDir';
 import validPostSlugList from './validPostSlugList';
 import validPostSlugListGetter from './validPostSlugListGetter';
+import validPublicPostSlugList from './validPublicPostSlugList';
 
 const injectionDict = {
   MTB_COMPILED_USER_CONTENT_DIR,
@@ -77,6 +78,7 @@ const injectionDict = {
   userOrDefaultDir,
   validPostSlugList,
   validPostSlugListGetter,
+  validPublicPostSlugList,
 };
 
 console.log(injectionDict);
