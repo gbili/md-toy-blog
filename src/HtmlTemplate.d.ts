@@ -41,7 +41,7 @@ interface SdConverter {
   makeHtml(markdown: string): string;
 }
 interface MarkdownToHtmlServiceInterface {
-  loadConvert: (postSlug: string, markdownFilePath: string, preHtmlCallback?: PreHtmlCallback) => Promise<FmDataInterface>;
+  extractFmAttributesAndHtmlBodyFromMd: (postSlug: string, markdownFilePath: string, preHtmlCallback?: PreHtmlCallback) => Promise<FmDataInterface>;
 }
 interface MarkdownToHtmlConstructorInterface {
   new ({fm, converter}: { fm: FmFunction; converter: SdConverter; }): MarkdownToHtmlServiceInterface;

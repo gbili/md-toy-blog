@@ -20,7 +20,7 @@ export default class BlogHomeController extends NotFoundController {
 
     try {
       const postsDataWithHtmlBody: FmDataInterface[] = await Promise.all(posts.map(async (postSlug: string) => {
-        return await markdownToHtmlService.loadConvert(
+        return await markdownToHtmlService.extractFmAttributesAndHtmlBodyFromMd(
           postSlug,
           getMarkdownFilePath(postSlug),
           postPreviewShortener
