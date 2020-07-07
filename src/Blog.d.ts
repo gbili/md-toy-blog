@@ -19,14 +19,23 @@ type NotFoundControllerCtorConfig = { [k: string]: any; }
 
 type StaticFileControllerCtorConfig = { staticFilesDir: string; };
 
+type AppPathsConfig = {
+  compiledUserContentDir: string;
+  mdBlogPostsDir: string;
+  staticFilesDir: string;
+  viewTemplatesDir: string;
+}
+
+interface AppPathsInterface extends AppPathsConfig {
+  getMarkdownFilePath(postSlug: string): string;
+  getViewTemplateFilePath(controllerName: string): string;
+}
+
 interface BlogControllerCtorConfig { 
   markdownToHtmlService: MarkdownToHtmlServiceInterface;
   templateHydratorService: TemplateHydratorServiceInterface;
   additionalViewData?: ViewData;
-  appPaths: {
-    getMarkdownFilePath: (slug: string) => string;
-    getViewTemplateFilePath: (controllerName: string) => string;
-  };
+  appPaths: AppPathsInterface;
 }
 
 interface BlogHomeControllerCtorConfig extends BlogControllerCtorConfig{

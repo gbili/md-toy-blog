@@ -1,14 +1,3 @@
-export type AppPathsConfig = {
-  compiledUserContentDir: string;
-  mdBlogPostsDir: string;
-  staticFilesDir: string;
-  viewTemplatesDir: string;
-}
-export interface AppPathsInterface extends AppPathsConfig {
-  getMarkdownFilePath(postSlug: string): string;
-  getViewTemplateFilePath(controllerName: string): string;
-}
-
 export default class AppPathResolverService implements AppPathsInterface {
   compiledUserContentDir: string;
   mdBlogPostsDir: string;
