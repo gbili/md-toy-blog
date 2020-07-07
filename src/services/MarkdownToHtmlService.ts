@@ -27,7 +27,7 @@ export default class MarkdownToHtmlService { //implements MarkdownToHtmlConstruc
         }
 
         const fixNoLanguageBugFallbackToJS = function (body: string) {
-          return body.replace(/```\n([\s\S]*?\n)```/sg, "```plaintext\n$1```");
+          return body.replace(/```\n([\s\S]*?\n)```/sg, "```text\n$1```");
         };
         const safeBody = fixNoLanguageBugFallbackToJS(data.body);
 
