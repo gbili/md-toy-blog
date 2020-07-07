@@ -1,12 +1,23 @@
+const leftJoinSmallerThan = (words: string[], maxLen: number): string => {
+  if (maxLen < 1) return "";
+  if (words.length < 1) return "";
+  const wordsString = words.join(" ");
+  if (wordsString.length < maxLen) {
+    return wordsString;
+  }
+  return leftJoinSmallerThan(words.slice(0, words.length - 1), maxLen);
+}
+
  export default function getPostPreviewShortener({ previewLength }: { previewLength: number }): (data: FmDataInterface) => FmDataInterface {
   return function(data: FmDataInterface) {
-    const preview = typeof data.attributes.description !== 'undefined'
+    const preview = typeof data?.attributes?.description !== 'undefined'
       ? data.attributes.description
       : removeMdCodeBlocks(data.body);
-    const truncatePreview = (pre: string, maxLen: number) => pre.substring(0, maxLen);
+    const getWordsInFirstLine = getFirstLineOrDefault(textToLinesArray(preview)).split(" ");
+    const shortPreview = leftJoinSmallerThan(getWordsInFirstLine, previewLength);
     return {
       ...data,
-      body: truncatePreview(getFirstLineOrDefault(textToLinesArray(preview)), previewLength)
+      body: `${shortPreview}...`,
     };
   };
 }
