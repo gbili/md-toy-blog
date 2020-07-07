@@ -43,7 +43,7 @@ export default class MarkdownToHtmlService { //implements MarkdownToHtmlConstruc
 
         return resolve({
            ...dataAfterCallback,
-           body: converter.makeHtml(dataAfterCallback.body)
+           bodyHtml: converter.makeHtml(dataAfterCallback.body)
         });
       });
     })

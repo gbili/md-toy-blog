@@ -22,13 +22,15 @@ interface HtmlTemplateConstructor {
 interface PostDataAttributes {
   slug?: string;
   description?: string;
+  privacy: "private" | "public"
 }
 
 interface FmResult<T> {
   readonly attributes: T
   readonly body: string
+  readonly bodyHtml: string;
   readonly bodyBegin: number;
-  readonly frontmatter?: string
+  readonly frontmatter?: string;
 }
 type FmDataInterface = FmResult<PostDataAttributes>
 type PreHtmlCallback = (data: FmDataInterface) => FmDataInterface;
