@@ -1,14 +1,13 @@
 import { LoadDictElement } from 'di-why/build/src/DiContainer';
-import { PostListGetter } from './validPostSlugListGetter';
 
 type HomeControllerActionParamGetter = () => { posts: string[]; };
 
 const loadDictElement: LoadDictElement<HomeControllerActionParamGetter> = {
-  factory: ({ validPostSlugListGetter }: { validPostSlugListGetter: PostListGetter }) => {
-    return () => ({ posts: validPostSlugListGetter() });
+  factory: ({ validPublicPostSlugList }: { validPublicPostSlugList: string[] }) => {
+    return () => ({ posts: validPublicPostSlugList });
   },
   locateDeps: {
-    validPostSlugListGetter: 'validPostSlugListGetter',
+    validPublicPostSlugList: 'validPublicPostSlugList',
   }
 };
 

@@ -15,7 +15,7 @@ const routesInjectionDict: InjectionDict = {
       path: '/'
     },
     locateDeps: {
-      validPostSlugList: 'validPostSlugList',
+      validPostSlugList: 'validPublicPostSlugList',
       controller: {
         instance: 'blogPostController',
       },

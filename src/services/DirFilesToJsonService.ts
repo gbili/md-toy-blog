@@ -51,7 +51,8 @@ export default class DirFilesToJsonService {
   async generate(
     onSuccess: (writtenFilePath: string) => any = (writteFilePath) => writteFilePath,
     onFail: (err: Error) => any = (err) => err,
-    recrusiveRead: boolean = true) {
+    recrusiveRead: boolean = true
+  ) {
     try {
       const files = await this.readFilesListPromise(recrusiveRead) 
       const writtenFilePath = await this.writeJsonFilePromise(files);
