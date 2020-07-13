@@ -8,6 +8,8 @@ const converter = new showdown.Converter({
   extensions: [showdownHighlight]
 });
 
+converter.setOption('tables', true);
+
 const loadDictElement: LoadDictElement<MarkdownToHtmlService> = {
   constructible: MarkdownToHtmlService,
   deps: {
