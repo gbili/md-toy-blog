@@ -5,10 +5,10 @@ import MarkdownToHtmlService from './../services/MarkdownToHtmlService';
 import { LoadDictElement } from 'di-why/build/src/DiContainer';
 
 const converter = new showdown.Converter({
-  extensions: [showdownHighlight]
+  extensions: [showdownHighlight],
+  tables: true,
+  strikethrough: true,
 });
-
-converter.setOption('tables', true);
 
 const loadDictElement: LoadDictElement<MarkdownToHtmlService> = {
   constructible: MarkdownToHtmlService,
