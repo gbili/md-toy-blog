@@ -21,6 +21,7 @@ import blogHomeController from './blogHomeController';
 import blogPostController from './blogPostController';
 import blogPostsToJsonService from './blogPostsToJsonService';
 import generateJsonFilesLists from './generateJsonFilesLists'
+import handleSignals from './handleSignals';
 import homeControllerActionParamsGetter from './homeControllerActionParamsGetter';
 import loggerDict, { logger } from './logger';
 import markdownToHtmlService from './markdownToHtmlService';
@@ -60,6 +61,7 @@ const injectionDict = {
   blogPostController,
   blogPostsToJsonService,
   generateJsonFilesLists,
+  handleSignals,
   homeControllerActionParamsGetter,
   logger: loggerDict,
   markdownToHtmlService,
