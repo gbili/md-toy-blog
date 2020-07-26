@@ -49,6 +49,7 @@
     "nodemon": "latest",
     "recursive-readdir": "2.2.2",
     "saylo": "0.5.0",
+    "server-handle-signals": "1.0.1",
     "showdown": "1.9.1",
     "showdown-highlight": "2.1.4"
   },
