@@ -3,7 +3,7 @@ import { LoadDictElement } from 'di-why/build/src/DiContainer';
 export type GenerateJsonFilesList = () => Promise<void>;
 
 const loadDictElement: LoadDictElement<GenerateJsonFilesList> = {
-  factory: ({ blogPostsToJsonService, staticFilesToJsonService }) => { 
+  factory: ({ blogPostsToJsonService, staticFilesToJsonService, pagesToJsonService }) => {
     const recursive = true;
     const blogPostsListGen = async () => {
       try {
@@ -27,9 +27,20 @@ const loadDictElement: LoadDictElement<GenerateJsonFilesList> = {
         throw err;
       }
     };
+    const pagesListGen = async () => {
+      try {
+        await pagesToJsonService.generate(
+          function(file: string) {console.log('Page files list written', file)},
+          function(err: Error) {console.log(err)},
+          recursive
+        );
+      } catch (err) {
+        throw err;
+      }
+    };
     return async () => {
       try {
-        await Promise.all([blogPostsListGen(), staticFilesListGen()]);
+        await Promise.all([blogPostsListGen(), staticFilesListGen(), pagesListGen()]);
       } catch (err) {
         throw err;
       }
@@ -38,6 +49,7 @@ const loadDictElement: LoadDictElement<GenerateJsonFilesList> = {
   locateDeps: {
     blogPostsToJsonService: 'blogPostsToJsonService',
     staticFilesToJsonService: 'staticFilesToJsonService',
+    pagesToJsonService: 'pagesToJsonService',
   },
 };
 

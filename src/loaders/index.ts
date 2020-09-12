@@ -7,6 +7,7 @@ import MTB_ENV from './MTB_ENV';
 import MTB_MD_BLOG_POSTS_DIRNAME from './MTB_MD_BLOG_POSTS_DIR';
 import MTB_MISSING_REF_VALUE_REPLACEMENT from './MTB_MISSING_REF_VALUE_REPLACEMENT';
 import MTB_PACKAGE_NAME from './MTB_PACKAGE_NAME';
+import MTB_PAGES_DIR from './MTB_PAGES_DIR';
 import MTB_POST_PREVIEW_LENGTH from './MTB_POST_PREVIEW_LENGTH';
 import MTB_ROOT_DIR from './MTB_ROOT_DIR';
 import MTB_STATIC_FILES_DIRNAME from './MTB_STATIC_FILES_DIR';
@@ -28,7 +29,10 @@ import markdownToHtmlService from './markdownToHtmlService';
 import missingRefValueReplacementCallback from './missingRefValueReplacementCallback';
 import mostachito from './mostachito';
 import notFoundController from './notFoundController';
+import pageController from './pageController';
+import pagesToJsonService from './pagesToJsonService';
 import postPreviewShortener from './postPreviewShortener';
+import relativePageListGetter from './relativePageListGetter';
 import relativeStaticFileListGetter from './relativeStaticFileListGetter';
 import routesDict from './routesDict';
 import routerService from './routerService';
@@ -48,6 +52,7 @@ const injectionDict = {
   MTB_MD_BLOG_POSTS_DIRNAME,
   MTB_MISSING_REF_VALUE_REPLACEMENT,
   MTB_PACKAGE_NAME,
+  MTB_PAGES_DIR,
   MTB_POST_PREVIEW_LENGTH,
   MTB_ROOT_DIR,
   MTB_STATIC_FILES_DIRNAME,
@@ -68,7 +73,10 @@ const injectionDict = {
   missingRefValueReplacementCallback,
   mostachito,
   notFoundController,
+  pageController,
+  pagesToJsonService,
   postPreviewShortener,
+  relativePageListGetter,
   relativeStaticFileListGetter,
   ...routesDict,
   routerService,

@@ -2,12 +2,14 @@ export default class AppPathResolverService implements AppPathsInterface {
   compiledUserContentDir: string;
   mdBlogPostsDir: string;
   staticFilesDir: string;
+  pagesDir: string;
   viewTemplatesDir: string;
 
   constructor(config: AppPathsConfig) {
     this.compiledUserContentDir = config.compiledUserContentDir;
     this.mdBlogPostsDir = config.mdBlogPostsDir;
     this.staticFilesDir = config.staticFilesDir;
+    this.pagesDir = config.pagesDir;
     this.viewTemplatesDir = config.viewTemplatesDir;
     this.getMarkdownFilePath = this.getMarkdownFilePath.bind(this);
     this.getViewTemplateFilePath = this.getViewTemplateFilePath.bind(this);

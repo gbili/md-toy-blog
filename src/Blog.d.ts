@@ -15,14 +15,21 @@ type StaticFileRouteCtorAdditionalProps = { staticFilePathsGetter: () => string[
 type StaticFileControllerActionParams = { filepath: string; };
 type StaticFileRouteCtorConfigProps = RouteMatchPathCtorConfig<StaticFileRouteCtorAdditionalProps, StaticFileControllerActionParams>;
 
+type PageRouteCtorAdditionalProps = { pagesFilePathsGetter: () => string[]; };
+type PageControllerActionParams = { filepath: string; };
+type PageRouteCtorConfigProps = RouteMatchPathCtorConfig<PageRouteCtorAdditionalProps, PageControllerActionParams>;
+
 type NotFoundControllerCtorConfig = { [k: string]: any; }
 
 type StaticFileControllerCtorConfig = { staticFilesDir: string; };
+
+type PageControllerCtorConfig = { pagesDir: string; };
 
 type AppPathsConfig = {
   compiledUserContentDir: string;
   mdBlogPostsDir: string;
   staticFilesDir: string;
+  pagesDir: string;
   viewTemplatesDir: string;
 }
 

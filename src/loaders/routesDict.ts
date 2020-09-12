@@ -3,6 +3,7 @@ import BlogPostRoute from '../routes/BlogPostRoute';
 import BlogHomeRoute from '../routes/BlogHomeRoute';
 import StaticFileRoute from '../routes/StaticFileRoute';
 import NotFoundRoute from '../routes/NotFoundRoute';
+import PageRoute from '../routes/PageRoute';
 
 type InjectionDict = {
   [k: string]: LoadDictElement; 
@@ -43,6 +44,18 @@ const routesInjectionDict: InjectionDict = {
       staticFilePathsGetter: 'relativeStaticFileListGetter',
       controller: {
         instance: 'staticFileController',
+      },
+    },
+  },
+  pageRoute: {
+    constructible: PageRoute,
+    deps: {
+      path: '/',
+    },
+    locateDeps: {
+      pageFilePathsGetter: 'relativePageListGetter',
+      controller: {
+        instance: 'pageController',
       },
     },
   },

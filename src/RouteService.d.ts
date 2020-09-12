@@ -9,6 +9,7 @@ type AppConfig = {
   packageName: string;
   previewLength: number;
   staticFilesDir: string;
+  pagesDir: string;
   viewTemplatesDir: string;
   userCustomConfigPath: string;
   userProjectRootDir: string;
