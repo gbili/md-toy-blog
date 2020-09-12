@@ -45,6 +45,6 @@ interface BlogControllerCtorConfig {
   appPaths: AppPathsInterface;
 }
 
-interface BlogHomeControllerCtorConfig extends BlogControllerCtorConfig{
+interface BlogHomeControllerCtorConfig extends BlogControllerCtorConfig {
   postPreviewShortener: (data: FmDataInterface) => FmDataInterface;
 }

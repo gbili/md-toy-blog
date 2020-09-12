@@ -34,7 +34,6 @@ const loadDictElement: LoadDictElement<PossiblyEnhancedAppConfig> = {
     viewTemplatesDir: 'MTB_VIEW_TEMPLATES_DIR',
     userCustomConfigPath: 'MTB_USER_CUSTOM_CONFIG_PATH',
     userProjectRootDir: 'MTB_USER_PROJECT_ROOT_DIR',
-
     userCustomConfig: 'userCustomConfig',
   }
 };

@@ -18,7 +18,7 @@ export default class BlogPostController extends NotFoundController {
     const { getMarkdownFilePath, getViewTemplateFilePath } = appPaths;
 
     try {
-      const postDataWithHtmlBody = await markdownToHtmlService.extractFmAttributesAndHtmlBodyFromMd(
+      const postDataWithHtmlBody: FmDataInterface = await markdownToHtmlService.extractFmAttributesAndHtmlBodyFromMd(
         postSlug,
         getMarkdownFilePath(postSlug)
       );
