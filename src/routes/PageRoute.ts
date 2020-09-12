@@ -21,7 +21,9 @@ export default class PageRoute
   }
 
   protected getHtmlFileRelativePathWithoutDot(request: HttpRequest): string {
-    return `${this.getRequestedFilepath(request)}.html`;
+    const requestedFilepath = this.getRequestedFilepath(request);
+    console.log('requestedFilePath: ', requestedFilepath);
+    return `${(requestedFilepath === '/') ? '/index' : requestedFilepath}.html`;
   }
 
   protected getRequestedFilepath({ url }: { url: string; }) {
