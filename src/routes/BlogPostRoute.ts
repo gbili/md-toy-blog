@@ -10,15 +10,15 @@ export default class BlogPostRoute
   }
 
   getControllerActionParams({ request }: { request: HttpRequest }): BlogPostControllerActionParams {
-    return { postSlug: this.getRequestedPostSlug(request, this.path) };
+    return { postSlug: this.getRequestedPostSlug(request, this.paths) };
   }
 
   protected isValid(req: HttpRequest) {
-    return this.config.validPostSlugList.indexOf(this.getRequestedPostSlug(req, this.path)) >= 0;
+    return this.config.validPostSlugList.indexOf(this.getRequestedPostSlug(req, this.paths)) >= 0;
   }
 
-  private getRequestedPostSlug(req: HttpRequest, path: string): string {
-    const [, postSlug] = req.url.split(path);
+  private getRequestedPostSlug(req: HttpRequest, paths: string[]): string {
+    const [, postSlug] = req.url.split(paths[0]);
     return postSlug; 
   }
 }

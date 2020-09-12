@@ -14,7 +14,7 @@ const routesInjectionDict: InjectionDict = {
     constructible: BlogPostRoute,
     locateDeps: {
       validPostSlugList: 'validPublicPostSlugList',
-      path: 'MTB_BLOG_URL_PATH_PREFIX',
+      paths: ['MTB_BLOG_URL_PATH_PREFIX'],
       controller: {
         instance: 'blogPostController',
       },
@@ -24,7 +24,7 @@ const routesInjectionDict: InjectionDict = {
     constructible: BlogHomeRoute,
     locateDeps: {
       validPostSlugListGetter: 'validPostSlugListGetter',
-      path: 'MTB_BLOG_URL_PATH_PREFIX',
+      paths: ['MTB_BLOG_URL_PATH_PREFIX'],
       controller: {
         instance: 'blogHomeController',
         actionParamsGetter: 'homeControllerActionParamsGetter',
@@ -34,7 +34,7 @@ const routesInjectionDict: InjectionDict = {
   staticFileRoute: {
     constructible: StaticFileRoute,
     deps: {
-      path: '/css/',
+      paths: ['/css/', '/js/', '/img/'],
     },
     locateDeps: {
       staticFilePathsGetter: 'relativeStaticFileListGetter',
@@ -46,7 +46,7 @@ const routesInjectionDict: InjectionDict = {
   pageRoute: {
     constructible: PageRoute,
     deps: {
-      path: '/',
+      paths: ['/'],
     },
     locateDeps: {
       pageFilePathsGetter: 'relativePageListGetter',

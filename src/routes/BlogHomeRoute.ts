@@ -8,8 +8,8 @@ export default class BlogHomeRoute
     super(config);
     this.controller = config.controller;
   }
-  protected matches(req: HttpRequest, path: string) {
-    return super.matches(req, path) && req.url === path;
+  protected matches(req: HttpRequest, paths: string[]) {
+    return super.matches(req, paths) && req.url === paths[0];
   }
   protected isValid(req: HttpRequest) {
     return true;

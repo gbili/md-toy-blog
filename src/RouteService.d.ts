@@ -91,7 +91,7 @@ type RouteMatchPathUserConfig<F=RouteConfigDefaultAdditionalPropsType, A=ActionP
 type RouteMatchRegExpUserConfig<F=RouteConfigDefaultAdditionalPropsType, A=ActionParamsDefaultRetType> =
   RouteUserConfig<F & { pathRegExp: RegExp; }, A>;
 type RouteMatchPathCtorConfig<F=RouteConfigDefaultAdditionalPropsType, A=ActionParamsDefaultRetType> =
-  RouteCtorConfig<F & { path: string; }, A>;
+  RouteCtorConfig<F & { paths: string[]; }, A>;
 type RouteMatchRegExpCtorConfig<F=RouteConfigDefaultAdditionalPropsType, A=ActionParamsDefaultRetType> =
   RouteCtorConfig<F & { pathRegExp: RegExp; }, A>;
 
