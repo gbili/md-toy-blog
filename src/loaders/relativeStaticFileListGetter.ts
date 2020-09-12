@@ -5,8 +5,12 @@ import { LoadDictElement } from 'di-why/build/src/DiContainer';
 const loadDictElement: LoadDictElement = {
   factory: function ({ compiledUserContentDir, staticFilesDir }: { compiledUserContentDir: string; staticFilesDir: string; }) {
     return function () {
-      const staticFileList: string[] = require(`${compiledUserContentDir}/static-file-list`);
-      return staticFileList.map(fullPath => fullPath.split(resolve(staticFilesDir)).pop());
+      const staticFileAbsPathsList: string[] = require(`${compiledUserContentDir}/static-file-list`);
+      return staticFileAbsPathsList.map(fullPath => {
+        const splitRes = fullPath.split(resolve(staticFilesDir))
+        const relativePathWithoutPreSlashDotButWithSuffix = splitRes[splitRes.length -1];
+        return relativePathWithoutPreSlashDotButWithSuffix;
+      });
     };
   },
   locateDeps: {

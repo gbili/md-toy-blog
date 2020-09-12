@@ -7,8 +7,9 @@ try {
     try {
       const generateJsonFilesLists = await di.get<GenerateJsonFilesList>('generateJsonFilesLists');
       const logger = await di.get<LoggerInterface>('logger');
+      logger.log(' GENERATING FILES LISTS');
       await generateJsonFilesLists();
-      logger.log(' GENERATING FILES LIST ');
+      logger.log(' GENERATED FILES LISTS');
     } catch (err) {
       throw err;
     }

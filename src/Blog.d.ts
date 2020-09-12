@@ -1,6 +1,6 @@
-type ContentDirNames = 'static' | 'compiled_user_content' | 'views' | 'content';
-type DirEnvVarNames = 'MTB_STATIC_FILES_DIR' | 'MTB_COMPILED_USER_CONTENT_DIR' | 'MTB_VIEW_TEMPLATES_DIR' | 'MTB_MD_BLOG_POSTS_DIR';
-type UserOrDefaultDirFunction = (envVarName: DirEnvVarNames, dirname: ContentDirNames) => Promise<string>;
+type ContentDirNames = 'static' | 'compiled_user_content' | 'views' | 'content' | 'pages';
+type DirnameEnvVarNames = 'MTB_STATIC_FILES_DIRNAME' | 'MTB_COMPILED_USER_CONTENT_DIRNAME' | 'MTB_VIEW_TEMPLATES_DIRNAME' | 'MTB_MD_BLOG_POSTS_DIRNAME' | 'MTB_HTML_PAGES_DIRNAME';
+type UserOrDefaultDirFunction = (envVarName: DirnameEnvVarNames, dirname: ContentDirNames) => Promise<string>;
 
 type BlogHomeRouteCtorAdditionalProps = { validPostSlugList: string[]; };
 type BlogHomeControllerActionParams = { posts: string[]; };

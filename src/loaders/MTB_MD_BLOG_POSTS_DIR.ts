@@ -6,7 +6,7 @@ type FactoryProps = {
 };
 const loadDictElement: LoadDictElement<Promise<string>> = {
   factory: async function ({ userOrDefaultDir }: FactoryProps) {
-    return await userOrDefaultDir('MTB_MD_BLOG_POSTS_DIR', 'content');
+    return await userOrDefaultDir('MTB_MD_BLOG_POSTS_DIRNAME', 'content');
   },
   locateDeps: {
     userOrDefaultDir: 'userOrDefaultDir',

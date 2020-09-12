@@ -45,7 +45,7 @@ Let's say the root directory of your blog is `<my_blog>`, then your blog posts w
 
 ```
 
-**IMPORTANT**: it is a requirement that **your markdown posts be contained in a sub directory called `content`** (unless you change the envvar `MTB_MD_BLOG_POSTS_DIR`)
+**IMPORTANT**: it is a requirement that **your markdown posts be contained in a sub directory called `content`** (unless you change the envvar `MTB_MD_BLOG_POSTS_DIRNAME`)
 
 Now that we have a structure like this `./<my_blog>/content`, go to the `<my_blog>` directory and install this package:
 
@@ -89,13 +89,13 @@ There are a few environment variables that allow you to customize _Md toy blog_'
 - `PORT`
   - default: `3100`
   - the port under which your blog will be available (e.g. `http://localhost:3100`)
-- `MTB_COMPILED_USER_CONTENT_DIR`
+- `MTB_COMPILED_USER_CONTENT_DIRNAME`
   - default: `<MTB_USER_PROJECT_ROOT_DIR>/compiled_user_content`
   - the absolute path of where the list of files that are to be served will be stored
 - `MTB_ENV`
   - `clone` | `module`
   - if you cloned the repo from github it will be `clone`, if you installed the module via `npm i <MTB_PACKAGE_NAME>` it will be `module`
-- `MTB_MD_BLOG_POSTS_DIR`
+- `MTB_MD_BLOG_POSTS_DIRNAME`
   - default: `<MTB_USER_PROJECT_ROOT_DIR>/content`
   - absolute path of where you store your blog posts, must be readable by node
 - `MTB_MISSING_REF_VALUE_REPLACEMENT`
@@ -109,7 +109,7 @@ There are a few environment variables that allow you to customize _Md toy blog_'
   - controls the max length of the post previews in Home page's post list
 - `MTB_ROOT_DIR`
   - the absolute path to this project's directory. Differs depending on `<MTB_ENV>`
-- `MTB_STATIC_FILES_DIR`
+- `MTB_STATIC_FILES_DIRNAME`
   - default: `<MTB_USER_PROJECT_ROOT_DIR>/static` if you have created that dir, or `<MTB_PROJECT_ROOT_DIR>/static` otherwise.
   - where you store your static files, uses the default ones if define none.
 - `MTB_USER_CUSTOM_CONFIG_PATH`:
@@ -117,7 +117,7 @@ There are a few environment variables that allow you to customize _Md toy blog_'
   - where you can define custom keys or override keys in `appConfig`
 - `MTB_USER_PROJECT_ROOT_DIR`:
   - the directory in which you normally would have your `.git` directory. where you normally would have your `content`, `static`, `views` and `user_compiled_dir`
-- `MTB_VIEW_TEMPLATES_DIR`
+- `MTB_VIEW_TEMPLATES_DIRNAME`
   - default: `<MTB_USER_PROJECT_ROOT_DIR>/views` if you have created that dir, or `<MTB_PROJECT_ROOT_DIR>/views` otherwise.
   - where your `.html` templates should be placed. They should be named after the `controller/action` that handles their data (e.g. `blogPostController.ts` should have an html template named `blog-post.html`).
 

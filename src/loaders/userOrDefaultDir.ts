@@ -11,7 +11,7 @@ type FactoryProps = {
 
 const loadDictElement: LoadDictElement<UserOrDefaultDirFunction> = {
   factory: function ({ MTB_USER_PROJECT_ROOT_DIR, MTB_ENV, MTB_ROOT_DIR, logger }: FactoryProps) {
-    return async function (envVarName: DirEnvVarNames, dirname: ContentDirNames) {
+    return async function (envVarName: DirnameEnvVarNames, dirname: ContentDirNames) {
       const userXDir = process.env[envVarName]
         || `${MTB_USER_PROJECT_ROOT_DIR}/${dirname}`;
 
