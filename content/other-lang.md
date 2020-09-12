@@ -1,16 +1,20 @@
 ---
 title: Other Lang
+privacy: public
 ---
+
 Some un-langed code:
 
-```apache
-this.isFlavorLessCode = true;
+```html
+<h1>This is a title tag code</h1>
 ```  
 
-```
+```js
 this.isFlavorLessCode = true;
 ```
 
-```pascal
-this.isFlavorLessCode = true;
+```css
+.className {
+  border-top: 1px solid grey !important;
+}
 ```
