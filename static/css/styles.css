@@ -54,3 +54,8 @@ header a {
   margin: 0 auto;
   max-width: 35em;
 }
+
+#content > .page {
+  margin: 0 auto;
+  max-width: 35em;
+}
