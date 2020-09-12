@@ -1,0 +1,1 @@
+alert('Javascript static route is working');
