@@ -9,15 +9,19 @@ export default class PageRoute
   constructor(public config: PageRouteCtorConfigProps) {
     super(config);
     this.controller = config.controller;
-    this.pageFilePaths = config.pagesFilePathsGetter();
+    this.pageFilePaths = config.pageFilePathsGetter();
   }
 
   getControllerActionParams({ request }: { request: HttpRequest }) {
-    return { filepath: this.getRequestedFilepath(request) };
+    return { filepath: this.getHtmlFileRelativePathWithoutDot(request) };
   }
 
   protected isValid(request: HttpRequest) {
-    return this.pageFilePaths.indexOf(`${this.getRequestedFilepath(request)}.html`) >= 0;
+    return this.pageFilePaths.indexOf(this.getHtmlFileRelativePathWithoutDot(request)) >= 0;
+  }
+
+  protected getHtmlFileRelativePathWithoutDot(request: HttpRequest): string {
+    return `${this.getRequestedFilepath(request)}.html`;
   }
 
   protected getRequestedFilepath({ url }: { url: string; }) {

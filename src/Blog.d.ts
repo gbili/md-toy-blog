@@ -15,7 +15,7 @@ type StaticFileRouteCtorAdditionalProps = { staticFilePathsGetter: () => string[
 type StaticFileControllerActionParams = { filepath: string; };
 type StaticFileRouteCtorConfigProps = RouteMatchPathCtorConfig<StaticFileRouteCtorAdditionalProps, StaticFileControllerActionParams>;
 
-type PageRouteCtorAdditionalProps = { pagesFilePathsGetter: () => string[]; };
+type PageRouteCtorAdditionalProps = { pageFilePathsGetter: () => string[]; };
 type PageControllerActionParams = { filepath: string; };
 type PageRouteCtorConfigProps = RouteMatchPathCtorConfig<PageRouteCtorAdditionalProps, PageControllerActionParams>;
 
