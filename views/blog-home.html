@@ -17,7 +17,7 @@
       <div id="content">
         <ul class="posts-list">
           {{posts as post
-          <li><a href="/{{ post.attributes.slug }}">{{ post.attributes.title }}</a><div class="post-preview">{{ post.body }}</div></li>
+          <li><a href="{{ blogUrlPathPrefix }}{{ post.attributes.slug }}">{{ post.attributes.title }}</a><div class="post-preview">{{ post.bodyHtml }}</div></li>
           posts}}
         </ul>
       </div>

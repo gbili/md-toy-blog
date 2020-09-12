@@ -5,19 +5,16 @@
     <title>{{ attributes.title }} - {{ siteTitle }}</title>
     <meta name="description" content="Simplest Blog in Nodejs">
     <meta name="author" content="Guillermo Pages">
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
-    <link rel="stylesheet" href="css/highlight-js-github.css">
   </head>
 
   <body>
     <div id="main-container">
       <header>
-        <a href="/"><h1>{{ siteTitle }}</h1></a>
+        <a href="{{ blogUrlPathPrefix }}"><h1>{{ siteTitle }}</h1></a>
       </header> 
       <div id="content">
         <h2>{{ attributes.title }}</h2>
         <div class="post">
-          {{ body }}
         </div>
       </div>
     </div>
