@@ -3,6 +3,7 @@ import 'dotenv/config';
 import DiContainer from 'di-why';
 
 import MTB_COMPILED_USER_CONTENT_DIR from './MTB_COMPILED_USER_CONTENT_DIR';
+import MTB_BLOG_URL_PATH_PREFIX from './MTB_BLOG_URL_PATH_PREFIX';
 import MTB_ENV from './MTB_ENV';
 import MTB_MD_BLOG_POSTS_DIR from './MTB_MD_BLOG_POSTS_DIR';
 import MTB_MISSING_REF_VALUE_REPLACEMENT from './MTB_MISSING_REF_VALUE_REPLACEMENT';
@@ -47,6 +48,7 @@ import validPostSlugListGetter from './validPostSlugListGetter';
 import validPublicPostSlugList from './validPublicPostSlugList';
 
 const injectionDict = {
+  MTB_BLOG_URL_PATH_PREFIX,
   MTB_COMPILED_USER_CONTENT_DIR,
   MTB_ENV,
   MTB_MD_BLOG_POSTS_DIR,

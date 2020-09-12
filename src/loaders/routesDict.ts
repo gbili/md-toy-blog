@@ -12,11 +12,9 @@ type InjectionDict = {
 const routesInjectionDict: InjectionDict = {
   blogPostRoute: {
     constructible: BlogPostRoute,
-    deps: {
-      path: '/'
-    },
     locateDeps: {
       validPostSlugList: 'validPublicPostSlugList',
+      path: 'MTB_BLOG_URL_PATH_PREFIX',
       controller: {
         instance: 'blogPostController',
       },
@@ -24,11 +22,9 @@ const routesInjectionDict: InjectionDict = {
   },
   blogHomeRoute: {
     constructible: BlogHomeRoute,
-    deps: {
-      path: '/',
-    },
     locateDeps: {
       validPostSlugListGetter: 'validPostSlugListGetter',
+      path: 'MTB_BLOG_URL_PATH_PREFIX',
       controller: {
         instance: 'blogHomeController',
         actionParamsGetter: 'homeControllerActionParamsGetter',
