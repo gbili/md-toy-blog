@@ -44,7 +44,7 @@
     "dotenv": "^8.0.0",
     "front-matter": "4.0.2",
     "mime-types": "2.1.27",
-    "mocha": "7.1.2",
+    "mocha": "10.2.0",
     "mostachito": "1.2.0",
     "nodemon": "latest",
     "recursive-readdir": "2.2.2",
